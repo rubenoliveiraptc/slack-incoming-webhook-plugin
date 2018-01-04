@@ -196,6 +196,8 @@ public class SlackNotificationPlugin implements NotificationPlugin {
         try {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("charset", "utf-8");
+            connection.setConnectTimeout(15000);
+            connection.setReadTimeout(15000);
 
             connection.setDoInput(true);
             connection.setDoOutput(true);
